@@ -11,3 +11,5 @@ export const downloadTable = pgTable('downloades', {
   userAgent: text('user_agent').notNull(),
   ...timestamps,
 });
+
+//teste
