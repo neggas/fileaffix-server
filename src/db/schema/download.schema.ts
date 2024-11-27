@@ -12,4 +12,4 @@ export const downloadTable = pgTable('downloades', {
   ...timestamps,
 });
 
-//teste
+//testebc
