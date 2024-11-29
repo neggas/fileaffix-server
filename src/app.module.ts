@@ -12,12 +12,14 @@ import { LoggerModule } from 'nestjs-pino';
         customProps: () => ({
           context: 'HTTP',
         }),
-        transport: {
-          target: 'pino-pretty',
-          options: {
-            signleLine: true,
-          },
-        },
+        transport: !['staging', 'production'].includes(process.env.NODE_ENV)
+          ? {
+              target: 'pino-pretty',
+              options: {
+                signleLine: true,
+              },
+            }
+          : undefined,
       },
     }),
     ConfigModule.forRoot({
